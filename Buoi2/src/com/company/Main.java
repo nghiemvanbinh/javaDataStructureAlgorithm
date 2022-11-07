@@ -2,6 +2,7 @@ package com.company;
 
 import java.lang.String;
 import java.util.HashMap;
+import java.util.Scanner;
 
 public class Main {
     //--------------1108--------------------//
@@ -110,7 +111,32 @@ public class Main {
     }
     //------------557--------------//
 
+    public static void reverseWord(){
+        System.out.println("/*------------557---------*/");
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Mời bạn nhập vào chuỗi :");
+        String str = scanner.nextLine();
+        String reverse=" ",reversal=" ";
+        int space=0;
+        for(int i =0;i< str.length();i++){
+            reverse =  str.charAt(i)+reverse; //
+        }
 
+        for (int i =0 ;i<reverse.length();i++){
+            if(reverse.charAt(i)==' ')
+            {
+                String k = reverse.substring(space,i);
+                String kl="";
+                for (int j= 0; j < k.length();j++){
+                    kl = k.charAt(j)+ kl;
+                }
+                reversal = reversal+kl;
+                reversal =  reversal+" ";
+                space = i+1;
+            }
+        }
+        System.out.println("chuỗi sau khi đảo là:"+reversal.substring(1));
+    }
 
     public static void main(String[] args) {
         //-----------1108----------//
@@ -128,6 +154,7 @@ public class Main {
         String s3 = "vkbs bs t suepuv";
         System.out.println(decodeMessage(s2, s3));
         //--------------1859-----------------//
-
+        //------------------557-----------------//
+        reverseWord();
     }
 }
